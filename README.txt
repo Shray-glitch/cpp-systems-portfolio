@@ -1,10 +1,16 @@
-Suggested GitHub repo name: cpp-systems-portfolio
+# C++ Systems Portfolio
 
-Open index.html in a browser to view the web presentation.
+A small web presentation covering my background in distributed database/storage infrastructure and my current C++ systems work.
 
-The files slide_1.html through slide_6.html preserve the provided slide HTML chunks unchanged.
-The viewer only wraps them for navigation and scales the 1280x720 slides to fit the browser window without page scrolling.
+It includes:
+- Oracle Exadata / Exascale engineering experience
+- Low-Latency C++ Building Blocks
+- TinyKV
+- C++20, Linux, networking, concurrency, and systems programming
 
-For GitHub Pages, upload the contents of this folder to the repository root and enable Pages from the main branch / root.
-Expected URL format:
-https://shray-glitch.github.io/cpp-systems-portfolio/
+The presentation is intended as a concise overview for C++ systems, infrastructure, trading technology, and related software engineering opportunities.
+
+## Links
+
+- GitHub: https://github.com/Shray-glitch
+- LinkedIn: https://www.linkedin.com/in/shrayansh-tyagi/
