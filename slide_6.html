@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Opportunities & Contact - C++ Systems Engineering</title>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        @import url("https://www.genspark.ai/image_placeholder.png");
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #1e293b;
+        }
+
+        .slide-container {
+            position: relative;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+
+        .content-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1280px;
+            height: 720px;
+            padding: 40px 60px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 6px;
+            letter-spacing: -0.5px;
+        }
+
+        .header-left p {
+            font-size: 18px;
+            color: #64748b;
+            margin: 0;
+        }
+
+        .header-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background: #dbeafe;
+            border-radius: 20px;
+            font-size: 16px;
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        .header-badge i {
+            font-size: 16px;
+            color: #3b82f6;
+        }
+
+        .main-content {
+            display: flex;
+            gap: 32px;
+            flex: 1;
+            margin-bottom: 40px;
+        }
+
+        .left-section {
+            flex: 1.6;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ask-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 32px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ask-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .ask-icon {
+            width: 52px;
+            height: 52px;
+            background: #3b82f6;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .ask-icon i {
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .ask-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0;
+        }
+
+        .ask-subtitle {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        .ask-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 16px;
+        }
+
+        .ask-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 20px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 16px;
+            color: #334155;
+            line-height: 1.5;
+        }
+
+        .ask-item i {
+            color: #3b82f6;
+            font-size: 18px;
+        }
+
+        .ask-item span {
+            flex: 1;
+        }
+
+        .contact-section {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 32px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .contact-icon {
+            width: 52px;
+            height: 52px;
+            background: #3b82f6;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon i {
+            font-size: 24px;
+            color: #ffffff;
+        }
+
+        .contact-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0;
+        }
+
+        .contact-subtitle {
+            font-size: 14px;
+            color: #64748b;
+            margin-top: 4px;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex: 1;
+            justify-content: space-between;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 15px;
+            color: #334155;
+        }
+
+        .contact-item i {
+            color: #3b82f6;
+            font-size: 18px;
+            width: 24px;
+            text-align: center;
+        }
+
+        .contact-item span:first-of-type {
+            font-weight: 500;
+        }
+
+        .contact-item span.value-box {
+            flex: 1;
+            text-align: right;
+        }
+
+        .contact-item a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .closing-section {
+            background: #fef3c7;
+            border: 1px solid #fde68a;
+            border-radius: 8px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 24px;
+        }
+
+        .closing-text {
+            font-size: 16px;
+            color: #92400e;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .closing-text i {
+            font-size: 18px;
+            color: #f59e0b;
+        }
+
+        .closing-action {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: #92400e;
+            font-weight: 600;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .footer-left {
+            font-size: 14px;
+            color: #64748b;
+        }
+
+        .footer-right {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-link {
+            font-size: 14px;
+            color: #3b82f6;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="content-wrapper">
+<!-- Header -->
+<div class="header" data-object-type="textbox">
+<div class="header-left">
+<h2>Opportunities &amp; Contact</h2>
+<p>Open to C++ systems engineering, trading infrastructure, and related roles</p>
+</div>
+<div class="header-badge">
+<i class="fas fa-briefcase"></i>
+<span>Open to Opportunities</span>
+</div>
+</div>
+<!-- Main Content -->
+<div class="main-content">
+<!-- Left Section -->
+<div class="left-section">
+<div class="ask-card">
+<div class="ask-header">
+<div class="ask-icon">
+<i class="fas fa-handshake"></i>
+</div>
+<div>
+<div class="ask-title">C++ / Core Engineering / Trading Infrastructure Opportunities</div>
+<div class="ask-subtitle">Full-time roles and internships • Available immediately</div>
+</div>
+</div>
+<div class="ask-content">
+<div class="ask-item">
+<i class="fas fa-check-circle"></i>
+<span><strong>Available immediately</strong> — No notice period, ready to start</span>
+</div>
+<div class="ask-item">
+<i class="fas fa-map-marker-alt"></i>
+<span><strong>Open to onsite, hybrid, or remote</strong> — Flexible with location</span>
+</div>
+<div class="ask-item">
+<i class="fas fa-code"></i>
+<span><strong>Happy to complete a technical assignment or interview</strong> — Ready to demonstrate skills</span>
+</div>
+<div class="ask-item">
+<i class="fas fa-users"></i>
+<span><strong>Interested in teams working on C++, Linux, networking, concurrency, or performance-sensitive infrastructure</strong></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Section -->
+<div class="contact-section">
+<div class="contact-header">
+<div class="contact-icon">
+<i class="fas fa-address-book"></i>
+</div>
+<div>
+<div class="contact-title">Contact Information</div>
+<div class="contact-subtitle">Get in touch</div>
+</div>
+</div>
+<div class="contact-list">
+<div class="contact-item">
+<i class="fab fa-github"></i>
+<span>GitHub:</span>
+<span class="value-box"><a href="https://github.com/Shray-glitch">Shray-glitch</a></span>
+</div>
+<div class="contact-item">
+<i class="fab fa-linkedin"></i>
+<span>LinkedIn:</span>
+<span class="value-box"><a href="https://www.linkedin.com/in/shrayansh-tyagi/">shrayansh-tyagi</a></span>
+</div>
+<div class="contact-item">
+<i class="fas fa-envelope"></i>
+<span>Email:</span>
+<span class="value-box"><a href="mailto:st.shray200130@gmail.com">st.shray200130@gmail.com</a></span>
+</div>
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<span>Phone:</span>
+<span class="value-box"><a href="tel:+919797543269">+91-9797543269</a></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Closing Section -->
+<div class="closing-section" data-object-type="textbox">
+<div class="closing-text">
+<i class="fas fa-info-circle"></i>
+<span>If my background aligns with your team's work, I'd value a conversation.</span>
+</div>
+<div class="closing-action">
+<span>Available for opportunities</span>
+<i class="fas fa-arrow-right"></i>
+</div>
+</div>
+<!-- Footer -->
+<div class="footer" data-object-type="textbox">
+<div class="footer-left">
+            C++ Systems Engineering • Trading Infrastructure • Distributed Systems
+        </div>
+<div class="footer-right">
+<a class="footer-link" href="https://github.com/Shray-glitch">
+<i class="fab fa-github"></i>
+<span>GitHub</span>
+</a>
+<a class="footer-link" href="https://www.linkedin.com/in/shrayansh-tyagi/">
+<i class="fab fa-linkedin"></i>
+<span>LinkedIn</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

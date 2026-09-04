@@ -1,0 +1,409 @@
+<!-- SLIDE 4 -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>How This Maps to Trading Infrastructure</title>
+<link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+        @import url("https://www.genspark.ai/image_placeholder.png");
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #1e293b;
+        }
+        
+        .slide-container {
+            position: relative;
+            width: 1280px;
+            height: 720px;
+            overflow: hidden;
+            background: #ffffff;
+        }
+        
+        .content-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1280px;
+            height: 720px;
+            padding: 30px 50px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .header-left h2 {
+            font-size: 32px;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+        
+        .header-left p {
+            font-size: 16px;
+            color: #64748b;
+            margin: 0;
+        }
+        
+        .header-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: #dbeafe;
+            border-radius: 20px;
+            font-size: 14px;
+            color: #1e40af;
+            font-weight: 500;
+        }
+        
+        .header-badge i {
+            font-size: 14px;
+            color: #3b82f6;
+        }
+        
+        .flow-container {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .flow-diagram {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+        
+        .flow-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            padding: 12px 10px;
+            background: #ffffff;
+            border: 2px solid #3b82f6;
+            border-radius: 10px;
+            width: 135px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .flow-icon {
+            width: 32px;
+            height: 32px;
+            background: #3b82f6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 4px;
+        }
+        
+        .flow-icon i {
+            font-size: 14px;
+            color: #ffffff;
+        }
+        
+        .flow-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        
+        .flow-desc {
+            font-size: 10px;
+            color: #64748b;
+            line-height: 1.2;
+        }
+        
+        .flow-arrow {
+            color: #3b82f6;
+            font-size: 16px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .mapping-section {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        
+        .mapping-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 14px 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .mapping-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        
+        .mapping-icon {
+            width: 28px;
+            height: 28px;
+            background: #3b82f6;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .mapping-icon i {
+            font-size: 14px;
+            color: #ffffff;
+        }
+        
+        .mapping-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        
+        .mapping-content {
+            font-size: 12px;
+            color: #475569;
+            line-height: 1.5;
+        }
+        
+        .mapping-content strong {
+            color: #3b82f6;
+            margin-right: 4px;
+        }
+        
+        .note {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 16px;
+            background: #fef3c7;
+            border: 1px solid #fde68a;
+            border-radius: 8px;
+            font-size: 13px;
+            color: #92400e;
+            margin-bottom: 20px;
+        }
+        
+        .note i {
+            font-size: 14px;
+            color: #f59e0b;
+        }
+        
+        .footer {
+            margin-top: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 12px;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .footer-left {
+            font-size: 13px;
+            color: #64748b;
+        }
+        
+        .footer-right {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .footer-link {
+            font-size: 13px;
+            color: #3b82f6;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+    </style>
+</head>
+<body>
+<div class="slide-container">
+<div class="content-wrapper">
+<!-- Header -->
+<div class="header" data-object-type="textbox">
+<div class="header-left">
+<h2>How This Maps to Trading Infrastructure</h2>
+<p>Understanding the relevance of my experience to trading systems</p>
+</div>
+<div class="header-badge">
+<i class="fas fa-chart-line"></i>
+<span>Trading Systems</span>
+</div>
+</div>
+<div class="flow-container">
+<!-- Visual Pipeline -->
+<div class="flow-diagram" data-object-type="textbox">
+<div class="flow-item">
+<div class="flow-icon"><i class="fas fa-database"></i></div>
+<div class="flow-label">Market Data</div>
+<div class="flow-desc">Price feeds</div>
+</div>
+<div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+<div class="flow-item">
+<div class="flow-icon"><i class="fas fa-network-wired"></i></div>
+<div class="flow-label">Networking</div>
+<div class="flow-desc">TCP/UDP</div>
+</div>
+<div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+<div class="flow-item">
+<div class="flow-icon"><i class="fas fa-exchange-alt"></i></div>
+<div class="flow-label">Queues</div>
+<div class="flow-desc">Concurrency</div>
+</div>
+<div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+<div class="flow-item">
+<div class="flow-icon"><i class="fas fa-hdd"></i></div>
+<div class="flow-label">State Mgmt</div>
+<div class="flow-desc">Storage</div>
+</div>
+<div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+<div class="flow-item">
+<div class="flow-icon"><i class="fas fa-cogs"></i></div>
+<div class="flow-label">Execution</div>
+<div class="flow-desc">Orders</div>
+</div>
+<div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+<div class="flow-item">
+<div class="flow-icon"><i class="fas fa-check-circle"></i></div>
+<div class="flow-label">Reliability</div>
+<div class="flow-desc">Latency</div>
+</div>
+</div>
+<!-- Detailed Mapping Grid -->
+<div class="mapping-section" data-object-type="textbox">
+<div class="mapping-card">
+<div class="mapping-header">
+<div class="mapping-icon"><i class="fas fa-server"></i></div>
+<div class="mapping-title">Distributed Storage</div>
+</div>
+<div class="mapping-content">
+<strong>→</strong> Stateful infrastructure<br/>
+<strong>→</strong> Multi-node validation<br/>
+<strong>→</strong> Recovery workflows
+                        </div>
+</div>
+<div class="mapping-card">
+<div class="mapping-header">
+<div class="mapping-icon"><i class="fas fa-bug"></i></div>
+<div class="mapping-title">Failure &amp; Recovery</div>
+</div>
+<div class="mapping-content">
+<strong>→</strong> Reliability testing<br/>
+<strong>→</strong> Debugging complex issues<br/>
+<strong>→</strong> Leader transitions
+                        </div>
+</div>
+<div class="mapping-card">
+<div class="mapping-header">
+<div class="mapping-icon"><i class="fas fa-memory"></i></div>
+<div class="mapping-title">Memory &amp; Concurrency</div>
+</div>
+<div class="mapping-content">
+<strong>→</strong> SPSC queue work<br/>
+<strong>→</strong> Message processing<br/>
+<strong>→</strong> Predictable allocation
+                        </div>
+</div>
+<div class="mapping-card">
+<div class="mapping-header">
+<div class="mapping-icon"><i class="fas fa-network-wired"></i></div>
+<div class="mapping-title">Networking</div>
+</div>
+<div class="mapping-content">
+<strong>→</strong> TCP/epoll<br/>
+<strong>→</strong> SO_TIMESTAMP<br/>
+<strong>→</strong> Market data plumbing
+                        </div>
+</div>
+<div class="mapping-card">
+<div class="mapping-header">
+<div class="mapping-icon"><i class="fas fa-clock"></i></div>
+<div class="mapping-title">Latency</div>
+</div>
+<div class="mapping-content">
+<strong>→</strong> Performance testing<br/>
+<strong>→</strong> Timestamp handling<br/>
+<strong>→</strong> Execution paths
+                        </div>
+</div>
+<div class="mapping-card">
+<div class="mapping-header">
+<div class="mapping-icon"><i class="fas fa-shield-alt"></i></div>
+<div class="mapping-title">Reliability</div>
+</div>
+<div class="mapping-content">
+<strong>→</strong> Correctness testing<br/>
+<strong>→</strong> Failure scenarios<br/>
+<strong>→</strong> System validation
+                        </div>
+</div>
+</div>
+</div>
+<!-- Warning/Note -->
+<div class="note" data-object-type="textbox">
+<i class="fas fa-info-circle"></i>
+<span><strong>Note:</strong> This represents relevance to trading infrastructure, not equivalence. I have not built a full trading system.</span>
+</div>
+<!-- Footer -->
+<div class="footer" data-object-type="textbox">
+<div class="footer-left">
+                    Experience mapping to trading infrastructure components
+                </div>
+<div class="footer-right">
+<a class="footer-link" href="https://github.com/Shray-glitch">
+<i class="fab fa-github"></i>
+<span>GitHub</span>
+</a>
+<a class="footer-link" href="https://www.linkedin.com/in/shrayansh-tyagi/">
+<i class="fab fa-linkedin"></i>
+<span>LinkedIn</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+
+
+

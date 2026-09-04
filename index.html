@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Shrayansh Tyagi — C++ Systems Portfolio</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #0f172a;
+    font-family: Arial, sans-serif;
+    color: #e2e8f0;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .topbar {
+    height: 48px;
+    flex: 0 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 18px;
+    background: #111827;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  .deck-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #e5e7eb;
+    white-space: nowrap;
+  }
+  .controls { display: flex; gap: 8px; align-items: center; }
+  button {
+    background: #2563eb;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  button:disabled { opacity: 0.45; cursor: not-allowed; }
+  #counter {
+    min-width: 44px;
+    text-align: center;
+    color: #cbd5e1;
+    font-size: 14px;
+  }
+  .stage {
+    height: calc(100vh - 48px);
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    overflow: hidden;
+  }
+  .frame-wrap {
+    position: relative;
+    background: white;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+    overflow: hidden;
+    flex: 0 0 auto;
+  }
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1280px;
+    height: 720px;
+    border: 0;
+    transform-origin: top left;
+    background: #fff;
+  }
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="deck-title">Shrayansh Tyagi — C++ Systems Portfolio</div>
+    <div class="controls">
+      <button id="prev">Previous</button>
+      <span id="counter">1 / 6</span>
+      <button id="next">Next</button>
+    </div>
+  </div>
+  <div class="stage" id="stage">
+    <div class="frame-wrap" id="frameWrap">
+      <iframe id="deckFrame" src="slide_1.html"></iframe>
+    </div>
+  </div>
+<script>
+  const slides = ['slide_1.html','slide_2.html','slide_3.html','slide_4.html','slide_5.html','slide_6.html'];
+  let current = 0;
+  const frame = document.getElementById('deckFrame');
+  const counter = document.getElementById('counter');
+  const prev = document.getElementById('prev');
+  const next = document.getElementById('next');
+  const wrap = document.getElementById('frameWrap');
+  const stage = document.getElementById('stage');
+
+  function scaleFrame() {
+    const stageRect = stage.getBoundingClientRect();
+    const maxWidth = Math.max(stageRect.width - 32, 320);
+    const maxHeight = Math.max(stageRect.height - 32, 180);
+    const scale = Math.min(maxWidth / 1280, maxHeight / 720, 1);
+
+    wrap.style.width = `${1280 * scale}px`;
+    wrap.style.height = `${720 * scale}px`;
+    frame.style.transform = `scale(${scale})`;
+  }
+
+  function render() {
+    frame.src = slides[current];
+    counter.textContent = `${current + 1} / ${slides.length}`;
+    prev.disabled = current === 0;
+    next.disabled = current === slides.length - 1;
+    scaleFrame();
+  }
+
+  prev.onclick = () => { if (current > 0) { current--; render(); } };
+  next.onclick = () => { if (current < slides.length - 1) { current++; render(); } };
+  document.addEventListener('keydown', e => {
+    if ((e.key === 'ArrowRight' || e.key === ' ') && current < slides.length - 1) { current++; render(); }
+    if (e.key === 'ArrowLeft' && current > 0) { current--; render(); }
+  });
+  window.addEventListener('resize', scaleFrame);
+  frame.addEventListener('load', scaleFrame);
+  render();
+</script>
+</body>
+</html>
